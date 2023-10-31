@@ -625,6 +625,7 @@ open class LineChartRenderer: LineRadarRenderer
             let element = createAccessibleHeader(usingChart: chart,
                                                  andData: lineData,
                                                  withDefaultDescription: "Line Chart")
+            element.isAccessibilityElement = false
             accessibleChartElements.append(element)
         }
 
@@ -902,6 +903,7 @@ open class LineChartRenderer: LineRadarRenderer
 
         element.accessibilityLabel = "\(doesContainMultipleDataSets ? (dataSet.label ?? "")  + ", " : "") \(label): \(elementValueText)"
 
+        element.isAccessibilityElement = false
         modifier(element)
 
         return element
